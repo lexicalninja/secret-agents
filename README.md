@@ -5,6 +5,8 @@ A collection of Cursor subagents to help build things together.
 ## Agent Workflows
 
 Agents work together in a coordinated workflow:
+- **Manager** → Makes strategic decisions, hires agents, manages resources, and ensures projects have the right agents before work begins
+- **Orchestrator** → Orchestrates the full development workflow from idea to implementation
 - **Specification Writer** → Creates detailed specifications
 - **Scrum Master** → Breaks specifications into atomic tasks (including Design, Implementation, Infrastructure, Deployment)
 - **UI/UX Designer** → Picks up Design tasks and adds design specifications
@@ -26,75 +28,30 @@ Learn more: [Cursor Subagents Documentation](https://cursor.com/docs/context/sub
 
 All subagents are located in `.cursor/agents/` and can be invoked explicitly or used automatically by Cursor's agent.
 
-### 🔍 Verifier
-**File:** `.cursor/agents/verifier.md`
+### 👔 Manager
+**File:** `.cursor/agents/manager.md`
 
-Validates completed work. Use after tasks are marked done to confirm implementations are functional.
-
-**Usage:**
-```
-/verifier confirm the auth flow is complete
-```
-
-### 🐛 Debugger
-**File:** `.cursor/agents/debugger.md`
-
-Debugging specialist for errors and test failures. Use when encountering issues.
+Makes strategic decisions on work, hires agents (creates new or selects existing), and ensures projects have the right agents before work begins. Works alongside orchestrator to manage resources, prioritize tasks, handle escalations, resolve conflicts, and manage quality gates.
 
 **Usage:**
 ```
-/debugger investigate this error
+/manager review tasks and hire necessary agents
+/manager prioritize these tasks
+/manager resolve this conflict between agents
 ```
 
-### 🧪 Test Runner
-**File:** `.cursor/agents/test-runner.md`
+### 🎯 Orchestrator
+**File:** `.cursor/agents/orchestrator.md`
 
-Test automation expert. Runs proactively to test code changes and fix failures.
+Orchestrates the full development workflow from idea to implementation. Automatically coordinates all agents in the correct sequence: specification → tasks → design → implementation → review → commit.
 
 **Usage:**
 ```
-/test-runner run tests for the new feature
+/orchestrator build a user login page with email and password
+/orchestrator implement the features in specification-user-dashboard.md
 ```
 
-### 🔒 Security Auditor
-**File:** `.cursor/agents/security-auditor.md`
-
-Security specialist. Use when implementing auth, payments, or handling sensitive data.
-
-**Usage:**
-```
-/security-auditor review the payment module
-```
-
-### 📝 Code Reviewer
-**File:** `.cursor/agents/code-reviewer.md`
-
-Code quality specialist. Reviews code for best practices, maintainability, and team standards.
-
-**Usage:**
-```
-/code-reviewer review this pull request
-```
-
-### 🔍 Code Reviewer Feedback
-**File:** `.cursor/agents/code-reviewer-feedback.md`
-
-Reviews code and provides structured feedback documents for coding agents. Creates actionable feedback with file paths, line numbers, code examples, and prioritization. Automatically triggers on commits to main, branch merges, or pull requests.
-
-**Usage:**
-```
-/code-reviewer-feedback review the latest changes
-```
-
-### 📚 Documentation
-**File:** `.cursor/agents/documentation.md`
-
-Documentation specialist. Creates and updates docs, README files, API documentation, and code comments.
-
-**Usage:**
-```
-/documentation update the README with the new API
-```
+This is the recommended way to build features end-to-end automatically.
 
 ### 📋 Specification Writer
 **File:** `.cursor/agents/specification-writer.md`
@@ -146,18 +103,16 @@ Sets up infrastructure, CI/CD pipelines, deployment configurations, and developm
 /infrastructure-engineer set up CI/CD pipeline for this project
 ```
 
-### 🎯 Orchestrator
-**File:** `.cursor/agents/orchestrator.md`
+### 🔍 Code Reviewer Feedback
+**File:** `.cursor/agents/code-reviewer-feedback.md`
 
-Orchestrates the full development workflow from idea to implementation. Automatically coordinates all agents in the correct sequence: specification → tasks → design → implementation → review → commit.
+Reviews code and provides structured feedback documents for coding agents. Creates actionable feedback with file paths, line numbers, code examples, and prioritization. Automatically triggers on commits to main, branch merges, or pull requests.
 
 **Usage:**
 ```
-/orchestrator build a user login page with email and password
-/orchestrator implement the features in specification-user-dashboard.md
+/code-reviewer-feedback review the latest changes
 ```
 
-This is the recommended way to build features end-to-end automatically.
 
 ## How to Use
 
@@ -172,10 +127,13 @@ Use the orchestrator to automatically run the full workflow from idea to impleme
 The orchestrator will automatically:
 1. Create specification (specification-writer)
 2. Break into tasks (scrum-master)
-3. Add design specs (ui-ux-designer)
-4. Implement code (implementation-engineer)
-5. Review and iterate (code-reviewer-feedback)
-6. Commit changes
+3. Manager reviews and hires necessary agents (manager)
+4. Add design specs (ui-ux-designer)
+5. Implement code (implementation-engineer)
+6. Review and iterate (code-reviewer-feedback)
+7. Commit changes
+
+**Note:** The manager works alongside the orchestrator to make strategic decisions, hire agents when needed, and manage resources throughout the workflow.
 
 ### Explicit Invocation
 
@@ -445,6 +403,73 @@ Implements utility functions, helpers, and shared code. Creates reusable functio
 Sets up configuration files, environment variables, and project configuration. Creates config files, .env examples, and documentation.
 
 **Usage:** "Set up environment configuration"
+
+### 👔 Manager Skills
+
+The following skills are used by the Manager agent for strategic project management:
+
+#### 🔍 Agent Capability Assessor
+**Path:** `.claude/skills/agent-capability-assessor/SKILL.md`
+
+Assesses agent capabilities by analyzing agent files and determining what tasks they can handle. Evaluates if an existing agent can handle a task or if a new agent is needed.
+
+**Usage:** "Assess if implementation-engineer can handle this task"
+
+#### 🎯 Task-to-Agent Matcher
+**Path:** `.claude/skills/task-to-agent-matcher/SKILL.md`
+
+Matches tasks to appropriate agents by analyzing task requirements and finding agents with matching capabilities. Considers task type, requirements, and agent capabilities.
+
+**Usage:** "Match this task to the best agent"
+
+#### 🏭 Agent Creator
+**Path:** `.claude/skills/agent-creator/SKILL.md`
+
+Creates new agent files with complete specifications, following the same format as existing agents. Generates agent markdown files with name, description, core principles, workflow, and integration details.
+
+**Usage:** "Create a new ML engineer agent for machine learning tasks"
+
+#### 📊 Resource Planner
+**Path:** `.claude/skills/resource-planner/SKILL.md`
+
+Plans resource allocation and agent assignments to tasks. Considers task dependencies, agent capabilities, and workload distribution.
+
+**Usage:** "Plan resource allocation for these tasks"
+
+#### 📈 Task Prioritizer
+**Path:** `.claude/skills/task-prioritizer/SKILL.md`
+
+Prioritizes tasks based on dependencies, business value, resource availability, and project goals. Determines task execution order.
+
+**Usage:** "Prioritize these tasks"
+
+#### 🚨 Escalation Handler
+**Path:** `.claude/skills/escalation-handler/SKILL.md`
+
+Handles escalations and determines appropriate escalation paths. Analyzes issues, determines severity, and routes to appropriate resolution path.
+
+**Usage:** "Handle this escalation"
+
+#### ⚖️ Conflict Resolver
+**Path:** `.claude/skills/conflict-resolver/SKILL.md`
+
+Resolves conflicts between agents or approaches when disagreements arise. Analyzes conflicts, evaluates options, and makes decisions to resolve conflicts.
+
+**Usage:** "Resolve this conflict between agents"
+
+#### ✅ Quality Gate Manager
+**Path:** `.claude/skills/quality-gate-manager/SKILL.md`
+
+Manages quality gates and checkpoints to ensure work meets standards before proceeding to next phases. Defines quality criteria, checks work against criteria, and makes go/no-go decisions.
+
+**Usage:** "Check if this work meets quality gates"
+
+#### 🔧 Resource Optimizer
+**Path:** `.claude/skills/resource-optimizer/SKILL.md`
+
+Optimizes resource usage and makes decisions about when to optimize existing resources vs. add new resources. Analyzes current resource usage and recommends optimization strategies.
+
+**Usage:** "Optimize resource allocation for this project"
 
 ## Skills vs Subagents
 
