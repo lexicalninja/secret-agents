@@ -119,6 +119,26 @@ Accepts design-focused tasks and adds comprehensive design specifications. Creat
 /ui-ux-designer add design specs to this task: [task document]
 ```
 
+### 👷 Implementation Engineer
+**File:** `.cursor/agents/implementation-engineer.md`
+
+Implements tasks from scrum-master, submits to code-reviewer-feedback, responds to feedback iteratively until approved, then commits changes. Handles both frontend and backend implementation work.
+
+**Usage:**
+```
+/implementation-engineer implement TASK-010 from tasks-dog-webpage.md
+```
+
+### 🏗️ Infrastructure Engineer
+**File:** `.cursor/agents/infrastructure-engineer.md`
+
+Sets up infrastructure, CI/CD pipelines, deployment configurations, and development environments. Handles infrastructure-as-code, automation, and deployment readiness.
+
+**Usage:**
+```
+/infrastructure-engineer set up CI/CD pipeline for this project
+```
+
 ## How to Use
 
 ### Explicit Invocation
@@ -347,6 +367,48 @@ Plans responsive design breakpoints, mobile-first approaches, and adaptive layou
 Ensures designs meet accessibility requirements including WCAG compliance, color contrast, keyboard navigation, and screen reader support.
 
 **Usage:** "Check accessibility compliance for this design"
+
+### 🔌 API Implementer
+**Path:** `.cursor/skills/api-implementer/SKILL.md`
+
+Implements API endpoints, routes, controllers, and request/response handling. Handles routing, validation, error handling, and response formatting.
+
+**Usage:** "Implement POST /api/tasks endpoint"
+
+### 💾 Database Implementer
+**Path:** `.cursor/skills/database-implementer/SKILL.md`
+
+Creates database schemas, migrations, queries, and data access layers. Handles schema design, migrations, CRUD operations, and optimization.
+
+**Usage:** "Create User and Task database tables"
+
+### 🧩 Component Implementer
+**Path:** `.cursor/skills/component-implementer/SKILL.md`
+
+Implements UI components from design specifications. Follows design specs, implements responsive design, and ensures accessibility.
+
+**Usage:** "Implement submit button component with design specs"
+
+### 🧪 Test Writer
+**Path:** `.cursor/skills/test-writer/SKILL.md`
+
+Writes comprehensive test cases including unit tests, integration tests, and E2E tests. Covers happy paths, edge cases, and error conditions.
+
+**Usage:** "Write tests for calculateTotal function"
+
+### 🛠️ Utility Implementer
+**Path:** `.cursor/skills/utility-implementer/SKILL.md`
+
+Implements utility functions, helpers, and shared code. Creates reusable functions, validation utilities, and helper modules.
+
+**Usage:** "Implement password hashing utility"
+
+### ⚙️ Config Setup
+**Path:** `.cursor/skills/config-setup/SKILL.md`
+
+Sets up configuration files, environment variables, and project configuration. Creates config files, .env examples, and documentation.
+
+**Usage:** "Set up environment configuration"
 
 ## Skills vs Subagents
 
