@@ -82,6 +82,16 @@ Transforms ideas into detailed specifications and implementation directions. Tak
 /specification-writer turn this idea into a detailed spec: "build a user dashboard"
 ```
 
+### 📊 Scrum Master
+**File:** `.cursor/agents/scrum-master.md`
+
+Reviews specification documents and breaks them down into atomic, modular tasks. Creates task lists with dependencies, parallel execution opportunities, and build-safe implementation strategies.
+
+**Usage:**
+```
+/scrum-master break down this specification into tasks: [specification document]
+```
+
 ## How to Use
 
 ### Explicit Invocation
