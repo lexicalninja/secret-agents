@@ -2,6 +2,13 @@
 
 A collection of Cursor subagents to help build things together.
 
+## Agent Workflows
+
+See [WORKFLOW.md](WORKFLOW.md) for detailed explanations of how agents work together, including:
+- Scrum Master → UI/UX Designer workflow
+- Task discovery and processing
+- Design task integration
+
 ## What are Cursor Subagents?
 
 Cursor subagents are specialized AI assistants that Cursor's agent can delegate tasks to. Each subagent operates in its own context window, handles specific types of work, and returns its result to the parent agent. Use subagents to break down complex tasks, do work in parallel, and preserve context in the main conversation.
@@ -100,6 +107,16 @@ Reviews specification documents and breaks them down into atomic, modular tasks.
 **Usage:**
 ```
 /scrum-master break down this specification into tasks: [specification document]
+```
+
+### 🎨 UI/UX Designer
+**File:** `.cursor/agents/ui-ux-designer.md`
+
+Accepts design-focused tasks and adds comprehensive design specifications. Creates markdown design specs, considers accessibility and responsive design, and updates task documents using a hybrid approach (sections for simple tasks, separate tasks for complex).
+
+**Usage:**
+```
+/ui-ux-designer add design specs to this task: [task document]
 ```
 
 ## How to Use
@@ -274,6 +291,62 @@ Reviews code architecture for design issues including poor separation of concern
 Checks code for best practice violations including DRY violations, SOLID principles, error handling patterns, and testing practices.
 
 **Usage:** "Check best practices in this code"
+
+### 📐 Layout Designer
+**Path:** `.cursor/skills/layout-designer/SKILL.md`
+
+Designs page layouts, grid systems, and structural arrangements. Considers responsive design, visual hierarchy, and accessibility.
+
+**Usage:** "Design layout for this page"
+
+### 🧩 Component Designer
+**Path:** `.cursor/skills/component-designer/SKILL.md`
+
+Designs reusable UI components including buttons, inputs, cards, modals. Specifies states, variations, and usage guidelines.
+
+**Usage:** "Design a button component"
+
+### 🎨 Color System Designer
+**Path:** `.cursor/skills/color-system-designer/SKILL.md`
+
+Creates color palettes and color systems. Defines primary, secondary, neutral, and semantic colors with accessibility compliance.
+
+**Usage:** "Create color system for this application"
+
+### ✍️ Typography Designer
+**Path:** `.cursor/skills/typography-designer/SKILL.md`
+
+Designs typography systems including font choices, sizes, weights, line heights. Creates type scale and usage guidelines.
+
+**Usage:** "Design typography system"
+
+### 📏 Spacing System Designer
+**Path:** `.cursor/skills/spacing-system-designer/SKILL.md`
+
+Creates spacing and sizing systems including margins, padding, gaps. Defines spacing tokens and usage guidelines.
+
+**Usage:** "Create spacing system"
+
+### 🎭 Interaction Designer
+**Path:** `.cursor/skills/interaction-designer/SKILL.md`
+
+Designs interactions, animations, transitions, and micro-interactions. Specifies hover states, click feedback, and loading states.
+
+**Usage:** "Design interactions for this component"
+
+### 📱 Responsive Design Planner
+**Path:** `.cursor/skills/responsive-design-planner/SKILL.md`
+
+Plans responsive design breakpoints, mobile-first approaches, and adaptive layouts. Defines how designs adapt across screen sizes.
+
+**Usage:** "Plan responsive design for this layout"
+
+### ♿ Accessibility Design Checker
+**Path:** `.cursor/skills/accessibility-design-checker/SKILL.md`
+
+Ensures designs meet accessibility requirements including WCAG compliance, color contrast, keyboard navigation, and screen reader support.
+
+**Usage:** "Check accessibility compliance for this design"
 
 ## Skills vs Subagents
 
