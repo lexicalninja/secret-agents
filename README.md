@@ -72,6 +72,16 @@ Documentation specialist. Creates and updates docs, README files, API documentat
 /documentation update the README with the new API
 ```
 
+### 📋 Specification Writer
+**File:** `.cursor/agents/specification-writer.md`
+
+Transforms ideas into detailed specifications and implementation directions. Takes high-level concepts and breaks them down into actionable specifications for another agent to implement.
+
+**Usage:**
+```
+/specification-writer turn this idea into a detailed spec: "build a user dashboard"
+```
+
 ## How to Use
 
 ### Explicit Invocation
@@ -167,6 +177,27 @@ Generates well-structured git commit messages following conventional commits for
 Generates comprehensive test cases for code. Creates tests covering happy paths, edge cases, error conditions, following testing best practices.
 
 **Usage:** "Generate tests for this function"
+
+### 📊 Requirement Analyzer
+**Path:** `.cursor/skills/requirement-analyzer/SKILL.md`
+
+Analyzes ideas and extracts functional and non-functional requirements. Identifies what needs to be built, constraints, and success criteria.
+
+**Usage:** "Analyze requirements for this feature idea"
+
+### 🗺️ Implementation Planner
+**Path:** `.cursor/skills/implementation-planner/SKILL.md`
+
+Creates detailed, step-by-step implementation plans from specifications. Organizes work into phases, identifies dependencies, and creates a clear roadmap.
+
+**Usage:** "Create an implementation plan for these requirements"
+
+### 🔧 Technical Spec Writer
+**Path:** `.cursor/skills/technical-spec-writer/SKILL.md`
+
+Creates detailed technical specifications including architecture, data models, APIs, and technology choices. Provides concrete technical guidance for implementation.
+
+**Usage:** "Write technical specs for this system"
 
 ## Skills vs Subagents
 
