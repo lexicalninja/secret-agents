@@ -4,8 +4,15 @@ A collection of Cursor subagents to help build things together.
 
 ## Agent Workflows
 
-See [WORKFLOW.md](WORKFLOW.md) for detailed explanations of how agents work together, including:
-- Scrum Master → UI/UX Designer workflow
+Agents work together in a coordinated workflow:
+- **Specification Writer** → Creates detailed specifications
+- **Scrum Master** → Breaks specifications into atomic tasks (including Design, Implementation, Infrastructure, Deployment)
+- **UI/UX Designer** → Picks up Design tasks and adds design specifications
+- **Implementation Engineer** → Implements tasks, submits for review, iterates until approved, then commits
+- **Infrastructure Engineer** → Handles Infrastructure and Deployment tasks
+- **Code Reviewer Feedback** → Reviews code and provides structured feedback
+
+Each agent's documentation explains how it discovers and processes tasks.
 - Task discovery and processing
 - Design task integration
 
