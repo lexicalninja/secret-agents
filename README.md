@@ -1,6 +1,30 @@
-# Secret Agents
+# My Little Scrum Team
 
-A collection of Cursor subagents to help build things together.
+A Claude Code plugin providing a collection of AI agents and skills that work together as a coordinated scrum team.
+
+## Installation
+
+### From Plugin Marketplace
+
+```
+/plugin install my-little-scrum-team
+```
+
+### From GitHub
+
+```
+/plugin install https://github.com/lexicalninja/secret-agents
+```
+
+### Local Development
+
+```bash
+claude --plugin-dir ./path-to-this-repo
+```
+
+## Overview
+
+This plugin provides a complete development team of AI agents to help build things together.
 
 ## Agent Workflows
 
@@ -18,15 +42,15 @@ Each agent's documentation explains how it discovers and processes tasks.
 - Task discovery and processing
 - Design task integration
 
-## What are Cursor Subagents?
+## What are Claude Code Agents?
 
-Cursor subagents are specialized AI assistants that Cursor's agent can delegate tasks to. Each subagent operates in its own context window, handles specific types of work, and returns its result to the parent agent. Use subagents to break down complex tasks, do work in parallel, and preserve context in the main conversation.
+Claude Code agents are specialized AI assistants that Claude can delegate tasks to. Each agent operates in its own context window, handles specific types of work, and returns its result to the parent agent. Use agents to break down complex tasks, do work in parallel, and preserve context in the main conversation.
 
-Learn more: [Cursor Subagents Documentation](https://cursor.com/docs/context/subagents)
+Learn more: [Claude Code Plugins Documentation](https://code.claude.com/docs/en/plugins)
 
-## Available Subagents
+## Available Agents
 
-All subagents are located in `agents/` and can be invoked explicitly or used automatically by Cursor's agent.
+All agents are located in `agents/` and can be invoked explicitly or used automatically by Claude.
 
 ### 👔 Manager
 **File:** `agents/manager.md`
@@ -35,9 +59,9 @@ Makes strategic decisions on work, hires agents (creates new or selects existing
 
 **Usage:**
 ```
-/manager review tasks and hire necessary agents
-/manager prioritize these tasks
-/manager resolve this conflict between agents
+/my-little-scrum-team:manager review tasks and hire necessary agents
+/my-little-scrum-team:manager prioritize these tasks
+/my-little-scrum-team:manager resolve this conflict between agents
 ```
 
 ### 🎯 Orchestrator
@@ -47,8 +71,8 @@ Orchestrates the full development workflow from idea to implementation. Automati
 
 **Usage:**
 ```
-/orchestrator build a user login page with email and password
-/orchestrator implement the features in specification-user-dashboard.md
+/my-little-scrum-team:orchestrator build a user login page with email and password
+/my-little-scrum-team:orchestrator implement the features in specification-user-dashboard.md
 ```
 
 This is the recommended way to build features end-to-end automatically.
@@ -60,7 +84,7 @@ Transforms ideas into detailed specifications and implementation directions. Tak
 
 **Usage:**
 ```
-/specification-writer turn this idea into a detailed spec: "build a user dashboard"
+/my-little-scrum-team:specification-writer turn this idea into a detailed spec: "build a user dashboard"
 ```
 
 ### 📊 Scrum Master
@@ -70,7 +94,7 @@ Reviews specification documents and breaks them down into atomic, modular tasks.
 
 **Usage:**
 ```
-/scrum-master break down this specification into tasks: [specification document]
+/my-little-scrum-team:scrum-master break down this specification into tasks: [specification document]
 ```
 
 ### 🎨 UI/UX Designer
@@ -80,7 +104,7 @@ Accepts design-focused tasks and adds comprehensive design specifications. Creat
 
 **Usage:**
 ```
-/ui-ux-designer add design specs to this task: [task document]
+/my-little-scrum-team:ui-ux-designer add design specs to this task: [task document]
 ```
 
 ### 👷 Implementation Engineer
@@ -90,7 +114,7 @@ Implements tasks from scrum-master, submits to code-reviewer-feedback, responds 
 
 **Usage:**
 ```
-/implementation-engineer implement TASK-010 from tasks-dog-webpage.md
+/my-little-scrum-team:implementation-engineer implement TASK-010 from tasks-dog-webpage.md
 ```
 
 ### 🏗️ Infrastructure Engineer
@@ -100,7 +124,7 @@ Sets up infrastructure, CI/CD pipelines, deployment configurations, and developm
 
 **Usage:**
 ```
-/infrastructure-engineer set up CI/CD pipeline for this project
+/my-little-scrum-team:infrastructure-engineer set up CI/CD pipeline for this project
 ```
 
 ### 🔍 Code Reviewer Feedback
@@ -110,7 +134,7 @@ Reviews code and provides structured feedback documents for coding agents. Creat
 
 **Usage:**
 ```
-/code-reviewer-feedback review the latest changes
+/my-little-scrum-team:code-reviewer-feedback review the latest changes
 ```
 
 
@@ -121,7 +145,7 @@ Reviews code and provides structured feedback documents for coding agents. Creat
 Use the orchestrator to automatically run the full workflow from idea to implementation:
 
 ```
-/orchestrator build a user login page with email and password
+/my-little-scrum-team:orchestrator build a user login page with email and password
 ```
 
 The orchestrator will automatically:
@@ -137,54 +161,54 @@ The orchestrator will automatically:
 
 ### Explicit Invocation
 
-Use the `/name` syntax to invoke a specific subagent:
+Use the `/my-little-scrum-team:agent-name` syntax to invoke a specific agent:
 
 ```
-/verifier confirm the implementation works
-/debugger fix this test failure
-/security-auditor audit the authentication code
+/my-little-scrum-team:implementation-engineer implement the login form
+/my-little-scrum-team:code-reviewer-feedback review the authentication code
+/my-little-scrum-team:infrastructure-engineer set up the deployment pipeline
 ```
 
 ### Natural Language
 
-You can also invoke subagents naturally:
+You can also invoke agents naturally:
 
 ```
-Use the verifier subagent to confirm the auth flow is complete
-Have the debugger subagent investigate this error
-Run the security-auditor subagent on the payment module
+Use the orchestrator agent to build a user dashboard
+Have the code reviewer agent review the latest changes
+Run the infrastructure engineer agent on the deployment setup
 ```
 
 ### Automatic Delegation
 
-Cursor's agent will automatically use these subagents when appropriate based on their descriptions. The agent reads the `description` field in each subagent's YAML frontmatter to decide when to delegate.
+Claude Code will automatically use these agents when appropriate based on their descriptions. The agent reads the `description` field in each agent's YAML frontmatter to decide when to delegate.
 
-## Creating Custom Subagents
+## Creating Custom Agents
 
-To create a new subagent, add a markdown file to `agents/` with YAML frontmatter:
+To create a new agent, add a markdown file to `agents/` with YAML frontmatter:
 
 ```markdown
 ---
-name: my-subagent
-description: When to use this subagent. Be specific!
+name: my-agent
+description: When to use this agent. Be specific!
 model: inherit
 ---
 
-Your subagent instructions here...
+Your agent instructions here...
 ```
 
 ### Configuration Fields
 
 - `name`: Unique identifier (lowercase with hyphens)
-- `description`: When to use this subagent (Agent reads this for delegation)
+- `description`: When to use this agent (Claude reads this for delegation)
 - `model`: `fast`, `inherit`, or specific model ID (defaults to `inherit`)
 - `readonly`: If `true`, restricts write permissions
 - `is_background`: If `true`, runs in background without waiting
 
 ## Best Practices
 
-- **Write focused subagents** — Each subagent should have a single, clear responsibility
-- **Invest in descriptions** — The `description` field determines when Agent delegates
+- **Write focused agents** — Each agent should have a single, clear responsibility
+- **Invest in descriptions** — The `description` field determines when Claude delegates
 - **Keep prompts concise** — Be specific and direct
 - **Add to version control** — Check `agents/` into your repository
 
@@ -471,15 +495,15 @@ Optimizes resource usage and makes decisions about when to optimize existing res
 
 **Usage:** "Optimize resource allocation for this project"
 
-## Skills vs Subagents
+## Skills vs Agents
 
-| Feature | Skills | Subagents |
-|---------|--------|-----------|
+| Feature | Skills | Agents |
+|---------|--------|--------|
 | **Purpose** | Single-purpose, quick actions | Complex, multi-step tasks |
 | **Context** | No separate context window needed | Own context window |
 | **Structure** | Folder with `SKILL.md` | Markdown file with YAML frontmatter |
 | **Best For** | Formatting, generating docs, simple tasks | Debugging, reviewing, complex workflows |
-| **Format** | Claude Skills standard | Cursor subagents format |
+| **Invocation** | Model-invoked automatically | Explicit or automatic delegation |
 
 ## Creating Custom Skills (Claude-Style)
 
@@ -514,13 +538,11 @@ description: What this skill does and when to use it. Be specific!
 
 ## Requirements
 
-- Cursor with Nightly release channel enabled
-- Subagents feature must be enabled in Cursor Settings
+- Claude Code version 1.0.33 or later
 
-To enable subagents:
-1. Open Cursor Settings (`Cmd+Shift+J`)
-2. Select **Beta**
-3. Set update channel to **Nightly**
-4. Restart Cursor
+To check your version:
+```bash
+claude --version
+```
 
-**Note:** Skills follow Claude's Skills format and may work when Cursor fully supports skills. They're structured to be compatible with both Cursor and Claude systems.
+To install or update Claude Code, visit the [Claude Code documentation](https://code.claude.com/docs/en/).

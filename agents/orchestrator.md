@@ -1,10 +1,5 @@
 ---
 name: orchestrator
-model: fast
----
-
----
-name: orchestrator
 description: Orchestrates the full development workflow from idea to implementation. Use when you have an idea or feature request that needs to go through the complete process: specification → task breakdown → design → implementation → review → commit. Automatically coordinates all agents in the correct sequence.
 model: inherit
 ---
