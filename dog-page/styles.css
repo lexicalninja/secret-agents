@@ -40,11 +40,11 @@ figure {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
     height: auto;
     display: block;
     margin: 0 auto;
-    max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
