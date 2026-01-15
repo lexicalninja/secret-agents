@@ -146,7 +146,36 @@ Sets up infrastructure, CI/CD pipelines, deployment configurations, and developm
 /infrastructure-engineer set up CI/CD pipeline for this project
 ```
 
+### 🎯 Orchestrator
+**File:** `.cursor/agents/orchestrator.md`
+
+Orchestrates the full development workflow from idea to implementation. Automatically coordinates all agents in the correct sequence: specification → tasks → design → implementation → review → commit.
+
+**Usage:**
+```
+/orchestrator build a user login page with email and password
+/orchestrator implement the features in specification-user-dashboard.md
+```
+
+This is the recommended way to build features end-to-end automatically.
+
 ## How to Use
+
+### Automatic Orchestration (Recommended)
+
+Use the orchestrator to automatically run the full workflow from idea to implementation:
+
+```
+/orchestrator build a user login page with email and password
+```
+
+The orchestrator will automatically:
+1. Create specification (specification-writer)
+2. Break into tasks (scrum-master)
+3. Add design specs (ui-ux-designer)
+4. Implement code (implementation-engineer)
+5. Review and iterate (code-reviewer-feedback)
+6. Commit changes
 
 ### Explicit Invocation
 
