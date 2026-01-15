@@ -1,3 +1,7 @@
+---
+name: infrastructure-engineer
+model: fast
+---
 
 ---
 name: infrastructure-engineer
