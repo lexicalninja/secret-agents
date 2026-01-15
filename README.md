@@ -62,6 +62,16 @@ Code quality specialist. Reviews code for best practices, maintainability, and t
 /code-reviewer review this pull request
 ```
 
+### 🔍 Code Reviewer Feedback
+**File:** `.cursor/agents/code-reviewer-feedback.md`
+
+Reviews code and provides structured feedback documents for coding agents. Creates actionable feedback with file paths, line numbers, code examples, and prioritization. Automatically triggers on commits to main, branch merges, or pull requests.
+
+**Usage:**
+```
+/code-reviewer-feedback review the latest changes
+```
+
 ### 📚 Documentation
 **File:** `.cursor/agents/documentation.md`
 
@@ -208,6 +218,62 @@ Creates detailed, step-by-step implementation plans from specifications. Organiz
 Creates detailed technical specifications including architecture, data models, APIs, and technology choices. Provides concrete technical guidance for implementation.
 
 **Usage:** "Write technical specs for this system"
+
+### 🐛 Bug Detector
+**Path:** `.cursor/skills/bug-detector/SKILL.md`
+
+Detects bugs, logic errors, and edge case handling issues in code. Returns structured bug reports with file paths, line numbers, and suggested fixes.
+
+**Usage:** "Detect bugs in this code"
+
+### 🔒 Security Scanner
+**Path:** `.cursor/skills/security-scanner/SKILL.md`
+
+Scans code for security vulnerabilities including SQL injection, XSS, hardcoded secrets, and missing input validation. Returns structured security issue reports.
+
+**Usage:** "Scan this code for security vulnerabilities"
+
+### 📋 Specification Checker
+**Path:** `.cursor/skills/specification-checker/SKILL.md`
+
+Compares code implementation against specifications and requirements. Verifies functional requirements, acceptance criteria, and technical specifications are met.
+
+**Usage:** "Check if this code meets the specification requirements"
+
+### 🎨 Code Style Analyzer
+**Path:** `.cursor/skills/code-style-analyzer/SKILL.md`
+
+Analyzes code for style and formatting issues including inconsistent formatting, naming conventions, code organization, and unused code.
+
+**Usage:** "Analyze code style in these files"
+
+### ⚡ Performance Analyzer
+**Path:** `.cursor/skills/performance-analyzer/SKILL.md`
+
+Analyzes code for performance issues including inefficient algorithms, unnecessary computations, memory leaks, and missing caching. Returns optimization suggestions.
+
+**Usage:** "Analyze performance issues in this code"
+
+### ♿ Accessibility Checker
+**Path:** `.cursor/skills/accessibility-checker/SKILL.md`
+
+Checks code for accessibility issues including missing alt text, poor color contrast, missing ARIA labels, and keyboard navigation issues. Returns WCAG compliance information.
+
+**Usage:** "Check accessibility compliance for this code"
+
+### 🏗️ Architecture Reviewer
+**Path:** `.cursor/skills/architecture-reviewer/SKILL.md`
+
+Reviews code architecture for design issues including poor separation of concerns, tight coupling, missing abstractions, and scalability concerns.
+
+**Usage:** "Review the architecture of this code"
+
+### ✅ Best Practices Checker
+**Path:** `.cursor/skills/best-practices-checker/SKILL.md`
+
+Checks code for best practice violations including DRY violations, SOLID principles, error handling patterns, and testing practices.
+
+**Usage:** "Check best practices in this code"
 
 ## Skills vs Subagents
 
