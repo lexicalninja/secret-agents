@@ -13,7 +13,7 @@ A Claude Code plugin providing a collection of AI agents and skills that work to
 ### From GitHub
 
 ```
-/plugin install https://github.com/lexicalninja/secret-agents
+/plugin install https://github.com/lexicalninja/my-little-scrum-team
 ```
 
 ### Local Development

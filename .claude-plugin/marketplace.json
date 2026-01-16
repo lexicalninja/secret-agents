@@ -1,37 +1,13 @@
 {
-  "name": "my-little-scrum-team-marketplace",
-  "owner": {
+  "name": "lexicalnina-marketplace",
+  "author": {
     "name": "lexicalninja",
     "email": "lexicalninja@gmail.com"
   },
-  "metadata": {
-    "description": "A coordinated AI scrum team with agents and skills for development workflows",
-    "version": "1.0.0"
+  "source": {
+    "source": "github",
+    "repo": "lexicalninja/my-little-scrum-team"
   },
-  "plugins": [
-    {
-      "name": "my-little-scrum-team",
-      "source": ".",
-      "description": "A collection of AI agents and skills that work together as a coordinated scrum team. Includes orchestrator, manager, specification writer, scrum master, UI/UX designer, implementation engineer, infrastructure engineer, and code reviewer agents, plus 44 reusable skills.",
-      "version": "1.0.0",
-      "author": {
-        "name": "lexicalninja",
-        "email": "lexicalninja@gmail.com"
-      },
-      "homepage": "https://github.com/lexicalninja/secret-agents",
-      "repository": "https://github.com/lexicalninja/secret-agents",
-      "license": "MIT",
-      "keywords": [
-        "scrum",
-        "agents",
-        "skills",
-        "orchestrator",
-        "code-review",
-        "implementation",
-        "workflow",
-        "automation"
-      ],
-      "category": "development"
-    }
-  ]
+  "description": "A coordinated AI scrum team with agents and skills for development workflows",
+  "version": "1.0.0"
 }
