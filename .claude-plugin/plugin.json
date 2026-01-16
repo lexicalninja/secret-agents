@@ -1,5 +1,5 @@
 {
-  "name": "my-little-scrum-team",
+  "name": "mls",
   "description": "A collection of AI agents and skills that work together as a coordinated scrum team. Includes orchestrator, manager, specification writer, scrum master, UI/UX designer, implementation engineer, infrastructure engineer, and code reviewer agents, plus 44 reusable skills for development workflows.",
   "version": "1.0.0",
   "author": {

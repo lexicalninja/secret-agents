@@ -1,13 +1,20 @@
 {
-  "name": "lexicalnina-marketplace",
-  "author": {
-    "name": "lexicalninja",
-    "email": "lexicalninja@gmail.com"
+  "name": "patricks-plugins",
+  "owner": {
+    "name": "Patrick Saxton"
   },
-  "source": {
-    "source": "github",
-    "repo": "lexicalninja/my-little-scrum-team"
-  },
-  "description": "A coordinated AI scrum team with agents and skills for development workflows",
-  "version": "1.0.0"
+  "plugins": [
+    {
+      "name": "my-little-scrum-team",
+      "author": {
+        "name": "Patrick Saxton"
+      },
+      "source": {
+        "source": "github",
+        "repo": "lexicalninja/my-little-scrum-team"
+      },
+      "description": "A coordinated AI scrum team with agents and skills for development workflows",
+      "version": "1.0.0"
+    }
+  ]
 }
